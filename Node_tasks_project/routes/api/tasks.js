@@ -9,8 +9,7 @@ router.post('/', async (req, res) => {
     try {
         const taskObject = {
             title: req.body.title,
-            status: req.body.status || "Pending",
-            date: req.body.date || new Date(),
+            status: req.body.status,
         };
         const task = new Task(taskObject);
         await task.save();
